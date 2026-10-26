@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="今いる場所が、世界のすべてじゃない。学校や仕事、人間関係がつらいとき、今の環境から離れる方法や新しい選択肢を探すためのサイトです。">
+  <meta name="theme-color" content="#f4f0e8">
+  <title>逃げ道は、ある。｜今いる場所が、世界のすべてじゃない。</title>
+  <style>
+    :root {
+      --paper: #f4f0e8;
+      --ink: #293b2e;
+      --muted: #5f6b61;
+      --green: #526b58;
+      --green-dark: #405744;
+      --line: #ded9ce;
+      --white: #fffdf9;
+      --soft-green: #e8eee6;
+      --shadow: 0 12px 36px rgba(41,59,46,.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+        "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.85; letter-spacing: .015em;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; }
+    .brand-icon {
+      width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--green); color: white; font-size: 22px;
+    }
+    .brand-name { font-weight: 800; line-height: 1.35; font-size: 18px; }
+    .brand-sub { display: block; color: var(--muted); font-size: 11px; font-weight: 500; }
+    nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; }
+    nav a { text-decoration: none; color: var(--muted); }
+    nav a:hover { color: var(--green); text-decoration: underline; }
+    .hero {
+      display: grid; grid-template-columns: 1.05fr .95fr; align-items: center;
+      gap: clamp(28px, 5vw, 64px); padding: 64px 0 76px;
+    }
+    .eyebrow { color: var(--green); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+    h1 { font-size: clamp(36px, 5vw, 58px); line-height: 1.35; letter-spacing: -.035em; margin: 14px 0 22px; }
+    .lead { font-size: 17px; color: #454f47; max-width: 560px; }
+    .note { font-size: 13px; color: var(--muted); }
+    .cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--green); color: white; padding: 14px 22px; border-radius: 12px;
+      text-decoration: none; font-weight: 700; margin: 16px 0 8px;
+      transition: transform .15s, background .15s;
+    }
+    .cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .hero-art {
+      min-height: 360px; border-radius: 26px; overflow: hidden; position: relative;
+      background: linear-gradient(150deg, rgba(244,240,232,.08), rgba(41,59,46,.22)),
+        linear-gradient(135deg, #d8e0d2, #aabca6 50%, #6e876f);
+      box-shadow: var(--shadow); display: flex; align-items: end; padding: 28px;
+    }
+    .sun { position: absolute; width: 130px; height: 130px; border-radius: 50%; background: #f6e7be; top: 44px; right: 54px; opacity: .9; }
+    .hill1, .hill2, .hill3 { position: absolute; border-radius: 50% 50% 0 0; width: 130%; left: -15%; }
+    .hill1 { height: 210px; bottom: 0; background: #8fa58c; transform: rotate(-7deg); }
+    .hill2 { height: 165px; bottom: -24px; background: #607c66; transform: rotate(8deg); }
+    .hill3 { height: 100px; bottom: -32px; background: #405e4b; transform: rotate(-3deg); }
+    .art-caption { position: relative; z-index: 2; color: white; font-size: 13px; text-shadow: 0 1px 6px #344d3a; }
+    section { padding: 56px 0; }
+    .section-head { max-width: 660px; margin-bottom: 28px; }
+    h2 { font-size: clamp(26px, 3.5vw, 36px); line-height: 1.45; margin: 0 0 12px; letter-spacing: -.025em; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .card {
+      display: block; padding: 24px; background: var(--white); border: 1px solid var(--line);
+      border-radius: 18px; text-decoration: none; transition: transform .15s, box-shadow .15s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .card-icon { font-size: 25px; margin-bottom: 8px; }
+    .card h3 { margin: 0 0 7px; font-size: 18px; }
+    .card p { color: var(--muted); margin: 0; font-size: 14px; }
+    .arrow { display: inline-block; color: var(--green); font-weight: 700; margin-top: 14px; font-size: 13px; }
+    .manifesto {
+      background: var(--soft-green); border-radius: 24px; padding: clamp(26px, 5vw, 54px);
+      margin: 12px 0 28px;
+    }
+    .manifesto h2 { max-width: 640px; }
+    .manifesto p { max-width: 720px; }
+    .quote { font-size: clamp(21px, 3vw, 29px); line-height: 1.65; font-weight: 800; margin: 24px 0 0; }
+    .small-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .small-action { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,249,.6); }
+    .small-action h3 { font-size: 16px; margin: 0 0 7px; }
+    .small-action p { font-size: 13px; color: var(--muted); margin: 0; }
+    .support {
+      background: #fff8e9; border: 1px solid #e9d9b8; padding: 24px; border-radius: 18px;
+    }
+    .support h2 { font-size: 23px; }
+    .support p { margin-bottom: 8px; }
+    .support a { color: #385a43; font-weight: 700; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 38px; color: var(--muted); font-size: 12px; }
+    footer .footer-links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 12px; }
+    footer a { text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 28px, 560px); }
+      header { align-items: flex-start; }
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 42px 0 48px; gap: 28px; }
+      .hero-art { min-height: 230px; }
+      .sun { width: 92px; height: 92px; top: 28px; right: 38px; }
+      section { padding: 40px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .small-actions { grid-template-columns: 1fr; }
+      .lead { font-size: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="#" aria-label="逃げ道は、ある。トップ">
+      <span class="brand-icon" aria-hidden="true">↗</span>
+      <span class="brand-name">逃げ道は、ある。<span class="brand-sub">今いる場所が、世界のすべてじゃない。</span></span>
+    </a>
+    <nav aria-label="メインメニュー">
+      <a href="#options">選択肢を探す</a>
+      <a href="#message">このサイトについて</a>
+      <a href="#support">相談先</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">FOR THE DAYS THAT FEEL TOO HARD</div>
+        <h1>もう、ここでは<br>やっていけない。<br>そう思ったあなたへ。</h1>
+        <p class="lead">学校も、仕事も、人間関係も。どうしてもつらい場所から、離れたっていい。</p>
+        <p class="lead">今いる場所でうまくいかないことと、あなたの人生がうまくいかないことは、同じじゃない。</p>
+        <a class="cta" href="#options">自分に合う、別の生き方を探す <span aria-hidden="true">→</span></a>
+        <p class="note">今すぐ前向きになれなくても、大丈夫。</p>
+      </div>
+      <div class="hero-art" role="img" aria-label="緑の丘と朝の光をイメージしたイラスト">
+        <span class="sun"></span><span class="hill1"></span><span class="hill2"></span><span class="hill3"></span>
+        <div class="art-caption">あなたの知らない道は、まだある。</div>
+      </div>
+    </div>
+
+    <section id="options">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>今、どんなことで悩んでいますか？</h2>
+          <p>答えを急がなくていい。まずは、今の自分に近いところから読んでみてください。</p>
+        </div>
+        <div class="cards">
+          <a class="card" href="#work">
+            <div class="card-icon" aria-hidden="true">☕</div>
+            <h3>仕事がつらい</h3>
+            <p>辞めたい、働けない、職場に行くのが苦しい。今の会社以外の道を考える。</p>
+            <span class="arrow">別の働き方を考える →</span>
+          </a>
+          <a class="card" href="#school">
+            <div class="card-icon" aria-hidden="true">📚</div>
+            <h3>学校がつらい</h3>
+            <p>いじめ、不登校、進路や人間関係。学校だけが未来を決めるわけじゃない。</p>
+            <span class="arrow">別の学び方を知る →</span>
+          </a>
+          <a class="card" href="#home">
+            <div class="card-icon" aria-hidden="true">🏡</div>
+            <h3>外に出られない</h3>
+            <p>ひきこもり、孤独、何もする気が起きない。家の中からでも探せる選択肢。</p>
+            <span class="arrow">小さな選択肢を探す →</span>
+          </a>
+          <a class="card" href="#world">
+            <div class="card-icon" aria-hidden="true">🌏</div>
+            <h3>違う世界を見たい</h3>
+            <p>旅、新しい趣味、地域活動。知らなかった場所や人に出会うきっかけ。</p>
+            <span class="arrow">世界を少し広げる →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="message">
+      <div class="wrap">
+        <div class="manifesto">
+          <div class="eyebrow">A DIFFERENT WAY IS POSSIBLE</div>
+          <h2>逃げることは、人生を諦めることじゃない。</h2>
+          <p>つらい場所に居続けることだけが、正しいわけじゃない。休んでもいい。誰かに頼ってもいい。別の道を探してもいい。</p>
+          <p>今いる環境が苦しいと、そこから離れた先のことなんて想像できなくなるかもしれない。でも、世界には、今あなたが知っているよりも、ずっと多くの場所や生き方がある。</p>
+          <p class="quote">今いる場所が、世界のすべてじゃない。</p>
+        </div>
+        <div class="small-actions">
+          <div class="small-action" id="work">
+            <h3>仕事を辞めたら、どうなる？</h3>
+            <p>転職、休職、職業訓練、地方での仕事。選択肢を整理する記事を準備中です。</p>
+          </div>
+          <div class="small-action" id="school">
+            <h3>学校から離れたら、どうなる？</h3>
+            <p>休むこと、学び直し、別の進路。信頼できる相談先も含めて紹介していきます。</p>
+          </div>
+          <div class="small-action" id="home">
+            <h3>今は外に出られなくても</h3>
+            <p>家でできること、匿名で相談できる場所、自分のペースで試せることを紹介します。</p>
+          </div>
+        </div>
+        <div style="height:16px"></div>
+        <div class="small-action" id="world">
+          <h3>知らなかった世界に出会う</h3>
+          <p>遠くへ旅することだけが世界を広げる方法じゃありません。近所の知らない場所を歩く、無料のイベントを調べる、誰かの体験談を読む。小さな一歩からでも始められます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="wrap">
+        <div class="support">
+          <h2>今、自分を傷つけてしまいそうなくらいつらいなら</h2>
+          <p>ここに書かれた記事だけで、すべての苦しさを解決できるわけではありません。ひとりで抱え込まず、信頼できる人や専門の相談先につながってください。</p>
+          <p><a href="https://www.mhlw.go.jp/mamorouyokokoro/" target="_blank" rel="noopener noreferrer">厚生労働省「まもろうよ こころ」— 電話・SNS相談先を見る ↗</a></p>
+          <p class="note">今すぐ命の危険がある場合は、日本では119（救急）または110（警察）に連絡してください。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="#message">このサイトについて</a>
+        <a href="#support">相談先</a>
+        <a href="mailto:hello@example.com">お問い合わせ（公開前に変更してください）</a>
+      </div>
+      <p>このサイトは、つらさを否定せず、今の環境から離れる方法や新しい選択肢を探すための情報サイトを目指しています。</p>
+      <p>※このページは試作版です。公開前に記事内容・相談先・運営者情報・プライバシー表記などを確認してください。</p>
+      <p>© 逃げ道は、ある。 — 試作版</p>
+    </div>
+  </footer>
+</body>
+</html>
