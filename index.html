@@ -94,6 +94,17 @@
     .small-action { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,253,249,.6); }
     .small-action h3 { font-size: 16px; margin: 0 0 7px; }
     .small-action p { font-size: 13px; color: var(--muted); margin: 0; }
+    .article-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .article { padding: clamp(22px, 4vw, 34px); background: var(--white); border: 1px solid var(--line); border-radius: 20px; }
+    .article h3 { font-size: clamp(20px, 2.8vw, 26px); line-height: 1.5; margin: 0 0 14px; }
+    .article h4 { margin: 22px 0 6px; font-size: 16px; }
+    .article p, .article li { font-size: 15px; }
+    .article ul { padding-left: 1.35em; }
+    .resource-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+    .resource { display: block; padding: 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--white); text-decoration: none; }
+    .resource strong { display: block; margin-bottom: 5px; color: var(--green-dark); }
+    .resource span { display: block; color: var(--muted); font-size: 13px; }
+    .disclaimer { font-size: 12px; color: var(--muted); }
     .support {
       background: #fff8e9; border: 1px solid #e9d9b8; padding: 24px; border-radius: 18px;
     }
@@ -114,6 +125,7 @@
       section { padding: 40px 0; }
       .cards { grid-template-columns: 1fr; }
       .small-actions { grid-template-columns: 1fr; }
+      .resource-list { grid-template-columns: 1fr; }
       .lead { font-size: 16px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -195,24 +207,63 @@
           <p>今いる環境が苦しいと、そこから離れた先のことなんて想像できなくなるかもしれない。でも、世界には、今あなたが知っているよりも、ずっと多くの場所や生き方がある。</p>
           <p class="quote">今いる場所が、世界のすべてじゃない。</p>
         </div>
-        <div class="small-actions">
-          <div class="small-action" id="work">
-            <h3>仕事を辞めたら、どうなる？</h3>
-            <p>転職、休職、職業訓練、地方での仕事。選択肢を整理する記事を準備中です。</p>
-          </div>
-          <div class="small-action" id="school">
-            <h3>学校から離れたら、どうなる？</h3>
-            <p>休むこと、学び直し、別の進路。信頼できる相談先も含めて紹介していきます。</p>
-          </div>
-          <div class="small-action" id="home">
-            <h3>今は外に出られなくても</h3>
-            <p>家でできること、匿名で相談できる場所、自分のペースで試せることを紹介します。</p>
-          </div>
-        </div>
-        <div style="height:16px"></div>
-        <div class="small-action" id="world">
-          <h3>知らなかった世界に出会う</h3>
-          <p>遠くへ旅することだけが世界を広げる方法じゃありません。近所の知らない場所を歩く、無料のイベントを調べる、誰かの体験談を読む。小さな一歩からでも始められます。</p>
+        <div class="article-grid">
+          <article class="article" id="work">
+            <div class="eyebrow">WORK / CAREER</div>
+            <h3>仕事を辞めたいと思うほどつらいとき、すぐに結論を出さなくてもいい。</h3>
+            <p>朝、会社に向かうだけで苦しい。日曜日の夜が怖い。仕事のことを考えると眠れない。そんな状態なら、「自分が弱いからだ」と決めつけないでほしい。</p>
+            <p>辞めるか、続けるか。その二択だけで考えると、身動きが取れなくなることがあります。まずは「今の負担を少し減らす方法」と「別の環境へ移る方法」を分けて考えてみてください。</p>
+            <h4>今すぐできること</h4>
+            <ul>
+              <li>信頼できる人に「最近かなりしんどい」と事実だけ伝える。</li>
+              <li>有給休暇や休職制度、社内外の相談先を確認する。制度の利用条件は会社や状況によって異なります。</li>
+              <li>退職を決める前でも、求人を見る・職業訓練を調べるなど、次の選択肢を知っておく。</li>
+              <li>賃金・労働時間・ハラスメントなどの問題は、専門の相談窓口に状況を整理して相談する。</li>
+            </ul>
+            <p>今日、人生全部を決める必要はありません。まずは「明日の自分の負担をひとつ減らす」ことからで大丈夫です。</p>
+            <p class="disclaimer">※ここに書かれているのは一般的な情報です。退職・休職・労働上の権利については、個別の状況に応じて専門窓口に確認してください。</p>
+          </article>
+
+          <article class="article" id="school">
+            <div class="eyebrow">SCHOOL / LEARNING</div>
+            <h3>学校に行けない日があっても、あなたの未来が決まるわけじゃない。</h3>
+            <p>学校に行こうとすると体が動かない、人間関係が怖い、教室にいるだけで疲れ切ってしまう。理由をうまく説明できなくても、つらさが本物であることは変わりません。</p>
+            <p>無理をして一人で抱え込む前に、家族、保健室の先生、スクールカウンセラーなど、話せそうな人を一人だけ探してみてもいい。うまく話せなければ、このページを見せるだけでもかまいません。</p>
+            <h4>学校以外にも、相談しながら考えられること</h4>
+            <ul>
+              <li>登校時間や教室で過ごす時間を調整できるか、学校と相談する。</li>
+              <li>教育センターなど、学校の外にある相談先を探す。</li>
+              <li>年齢や状況に応じて、通信制高校、定時制高校、学び直しなどの情報を集める。</li>
+              <li>いじめや安全に関わる問題は、一人で解決しようとせず大人や相談窓口につなぐ。</li>
+            </ul>
+            <p>今すぐ進路を決めなくても大丈夫。休むことと、未来を諦めることは同じではありません。</p>
+          </article>
+
+          <article class="article" id="home">
+            <div class="eyebrow">AT YOUR OWN PACE</div>
+            <h3>外に出られない。何もできない。そんな時期にも、できることは小さくていい。</h3>
+            <p>誰とも会いたくない、連絡を返すのもしんどい、何かを始める気力がない。そんなときに、いきなり大きな目標を立てなくてもいいんです。</p>
+            <h4>ゼロに見える日にもできる、小さな選択肢</h4>
+            <ul>
+              <li>カーテンを開ける、水を飲む、窓の近くで少し過ごす。</li>
+              <li>人に会わずに読める体験談や支援情報を、一つだけ見る。</li>
+              <li>電話が難しければ、メールやSNSで相談できる窓口を探す。</li>
+              <li>本人だけで動けない場合は、家族や身近な人が相談できる支援先もある。</li>
+            </ul>
+            <p>「働く」「学校へ行く」だけがゴールではありません。安心できる状態を少しずつ取り戻しながら、次のことを考えていけばいい。自分のペースを大切にしてください。</p>
+          </article>
+
+          <article class="article" id="world">
+            <div class="eyebrow">A WIDER WORLD</div>
+            <h3>今いる場所の外側を、ほんの少しだけ知ってみる。</h3>
+            <p>環境が苦しいときは、世界全体が同じように苦しい場所に見えることがあります。でも、仕事の形も、学び方も、人との距離感も、一つだけではありません。</p>
+            <ul>
+              <li>地域の図書館や無料イベントなど、負担の少ない場所を調べる。</li>
+              <li>違う仕事や暮らし方をしている人の話を読む。</li>
+              <li>外出が難しい日は、オンラインの学習やコミュニティをのぞいてみる。</li>
+            </ul>
+            <p>すぐに行動しなくても、選択肢を知ること自体が一歩になることがあります。</p>
+          </article>
         </div>
       </div>
     </section>
@@ -220,10 +271,18 @@
     <section id="support">
       <div class="wrap">
         <div class="support">
-          <h2>今、自分を傷つけてしまいそうなくらいつらいなら</h2>
-          <p>ここに書かれた記事だけで、すべての苦しさを解決できるわけではありません。ひとりで抱え込まず、信頼できる人や専門の相談先につながってください。</p>
-          <p><a href="https://www.mhlw.go.jp/mamorouyokokoro/" target="_blank" rel="noopener noreferrer">厚生労働省「まもろうよ こころ」— 電話・SNS相談先を見る ↗</a></p>
-          <p class="note">今すぐ命の危険がある場合は、日本では119（救急）または110（警察）に連絡してください。</p>
+          <h2>一人で抱えきれないときは、相談先を頼っていい。</h2>
+          <p>何を話せばいいかわからなくても大丈夫です。「つらい」「どうしたらいいかわからない」と伝えるところから始められます。電話が苦手な人向けに、SNSやメールで相談できる窓口もあります。</p>
+          <div class="resource-list">
+            <a class="resource" href="https://kokoro.mhlw.go.jp/soudan/" target="_blank" rel="noopener noreferrer"><strong>仕事の悩み・職場のストレス</strong><span>厚生労働省「こころの耳」。働く人や家族向け。電話・SNS・メール相談を案内。</span></a>
+            <a class="resource" href="https://www.mhlw.go.jp/mamorouyokokoro/soudan/" target="_blank" rel="noopener noreferrer"><strong>こころの悩み・生きづらさ</strong><span>厚生労働省「まもろうよ こころ」。電話やSNSなどの相談窓口を探せます。</span></a>
+            <a class="resource" href="https://shienjoho.go.jp/" target="_blank" rel="noopener noreferrer"><strong>どこに相談すればいいかわからない</strong><span>国の「支援情報検索サイト」。悩みや相談方法、地域から窓口を検索できます。</span></a>
+            <a class="resource" href="https://www.mext.go.jp/a_menu/h30gouu7/1407291.htm" target="_blank" rel="noopener noreferrer"><strong>子ども・学生の悩み、いじめ、不登校</strong><span>文部科学省「24時間子供SOSダイヤル」0120-0-78310。夜間・休日を含めて24時間相談できます。</span></a>
+            <a class="resource" href="https://www.mhlw.go.jp/kokoro/parent/consultation/window/window_02.html" target="_blank" rel="noopener noreferrer"><strong>ひきこもり・家族の悩み</strong><span>厚生労働省が案内する、ひきこもり地域支援センターなどの相談先。</span></a>
+            <a class="resource" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/soudan_info.html" target="_blank" rel="noopener noreferrer"><strong>ほかの相談先を探す</strong><span>厚生労働省の相談先一覧。電話・SNS・その他の相談先を確認できます。</span></a>
+          </div>
+          <p class="note">相談方法・受付時間・対象年齢などは窓口ごとに異なります。リンク先で最新情報を確認してください。このサイトは相談機関ではなく、情報を探すための案内サイトです。</p>
+          <p class="note">今すぐ自分や誰かの命に危険が迫っている場合は、日本では119（救急）または110（警察）に連絡してください。</p>
         </div>
       </div>
     </section>
@@ -234,11 +293,11 @@
       <div class="footer-links">
         <a href="#message">このサイトについて</a>
         <a href="#support">相談先</a>
-        <a href="mailto:hello@example.com">お問い合わせ（公開前に変更してください）</a>
+        
       </div>
       <p>このサイトは、つらさを否定せず、今の環境から離れる方法や新しい選択肢を探すための情報サイトを目指しています。</p>
-      <p>※このページは試作版です。公開前に記事内容・相談先・運営者情報・プライバシー表記などを確認してください。</p>
-      <p>© 逃げ道は、ある。 — 試作版</p>
+      <p>※掲載情報は一般的な案内です。相談先の受付時間・対象・対応内容は変更されることがあるため、リンク先で最新情報を確認してください。</p>
+      <p>© 逃げ道は、ある。</p>
     </div>
   </footer>
 </body>
